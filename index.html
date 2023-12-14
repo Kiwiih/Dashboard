@@ -14,20 +14,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Indie+Flower&family=Josefin+Sans:ital,wght@0,300;1,100&family=Young+Serif&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header id="date-div">
-
-    </header>
+    <!-- Header sektion där klockan kommer printas ut -->
+    <header id="date-div"></header>
+    <!-- Main sektionen där själva dashboard innehållet skall finnnas -->
     <main class="main-section">
-        <!-- https://stackoverflow.com/questions/56735599/content-editable-not-saving-with-localstorage -->
-        <h1 id="title" contenteditable="true"><strong>Dashboard</strong></h1>
-        <input type="text" id="notes-div">
+        <h1 id="title" contenteditable="true"></h1>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"><input type="text" id="notes-input"></div>
+        
     </main>
-    
+
+    <!-- Knapp och sektion för att slumpa en ny backgrundsbild -->
+    <div class="random-background-section">
     <button id="random-background-btn">
     <i class="fa-solid fa fa-rotate-right" style="color: #797c81;"></i>
      Random background
     </button>
-
+    </div>
+    <!-- Script taggar för att länka js fil samt kits för symboler -->
     <script src="./js/script.js"></script>
     <script src="https://kit.fontawesome.com/f80359c2af.js" crossorigin="anonymous"></script>
 </body>

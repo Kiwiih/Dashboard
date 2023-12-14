@@ -10,4 +10,15 @@ font-family: 'Josefin Sans', sans-serif;
     text-align: center;
     margin-top: 1.8em;
     font-weight: bold;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+}
+#date-div{
+    background-color: rgba(106, 209, 106, 0.3);
+    width: 35vh;
+    justify-content: center;
+    border-radius: 50%;
+}
+h1{
+    font-size: 2rem;
 }
