@@ -6,15 +6,21 @@
     <meta name="description" content="A basic dahsboard for the everyday user, displays all the necesseties and i customizable">
     <title>Dashboard</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="https://kit.fontawesome.com/f80359c2af.js" crossorigin="anonymous"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Indie+Flower&family=Josefin+Sans:ital,wght@0,300;1,100&family=Young+Serif&display=swap" rel="stylesheet">
 </head>
 <body>
     <header id="date-div">
 
     </header>
-    <main>
-
-        <input type="text">
+    <main class="main-section">
+        <!-- https://stackoverflow.com/questions/56735599/content-editable-not-saving-with-localstorage -->
+        <h1 id="title" contenteditable="true"><strong>Dashboard</strong></h1>
+        <input type="text" id="notes-div">
     </main>
     
     <button id="random-background-btn">
@@ -23,6 +29,6 @@
     </button>
 
     <script src="./js/script.js"></script>
-    
+    <script src="https://kit.fontawesome.com/f80359c2af.js" crossorigin="anonymous"></script>
 </body>
 </html>

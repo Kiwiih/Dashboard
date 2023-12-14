@@ -1,5 +1,13 @@
 ::before,
 ::after{
     box-sizing: border-box;
-    margin: 0;
+    margin: 0;   
+}
+*{
+font-family: 'Josefin Sans', sans-serif;    
+}
+#date-div, h1{
+    text-align: center;
+    margin-top: 1.8em;
+    font-weight: bold;
 }
