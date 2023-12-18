@@ -19,26 +19,50 @@ function ifLocated(position){
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     //Här får apiUrl sitt egentliga värde
-    apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-    displayWeather(latitude, longitude);
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    getWeather(latitude, longitude);
 }
 //Felmeddelnande om geolocation inte hittas
 function notLocated(response){
-    console.log("Http-error: " + response.status);
+    console.log("Http-error: " + response.status + ":)");
 }
+
+
 //Funktion för att hämta och printa ut api
-async function displayWeather(latitude, longitude){
+async function getWeather(latitude, longitude){
     const response = await fetch(apiUrl);
     if (response.ok){
         const json = await response.json();
-        const weather = json;
+        // const weather = json;
+        displayWeather(json.list[0], "Idag");
+        console.log(json); 
 
+        //funktion för att få nytt datum(imorrn) och hämta info från api för att kunna printa
+        const tomorrowInfo = json.list.find(entry => {
+            const entryDate = new Date(entry.dt_txt);
+            const tomorrow = new Date();
+            //plussa på 1 så det blir morgondagens väder från json
+            tomorrow.setDate(tomorrow.getDate() + 1)
+            return entryDate.getDate() == tomorrow.getDate();
+        })
+        displayWeather(tomorrowInfo, 'Imorgon');
+
+        const nextTomorrowInfo = json.list.find(entry => {
+            const entryDate = new Date(entry.dt_txt);
+            const nextTomorrow = new Date();
+            //plussa på 2 så det blir övermorgondagens väder från json
+            nextTomorrow.setDate(nextTomorrow.getDate() + 2)
+            return entryDate.getDate() == nextTomorrow.getDate();
+        })
+        displayWeather(nextTomorrowInfo, 'Övermorgon');
+    //En mindre  felhantering i konsollen om inte vädret kan hämtas
     }else {
         console.log("Http-error: " + response.status);
     }        
 }
 
-function displayWeather(weatherInfo, daytitle){
+//Funktion för att printa ut vädret med olika egenskaper
+function displayWeather(weather, daytitle){
     const card = document.createElement('div');
         card.className = 'weather-cards'
 
@@ -58,12 +82,12 @@ function displayWeather(weatherInfo, daytitle){
         title.textContent = `${daytitle}`;
         card.appendChild(title);
 
-        
         //Hämta temperaturen och printa
         const temperature = document.createElement('div');
         temperature.className = 'card-temp';
         temperature.textContent = `${Math.trunc(weather.main.temp)}°C`;
         card.appendChild(temperature);
+
         //Hämta väder beskrivningen och printa (typ som att det regnar eller är blåsigt)
         const weatherDescription = document.createElement('div');
         weatherDescription.className = 'card-description';
@@ -72,6 +96,5 @@ function displayWeather(weatherInfo, daytitle){
 
         //appenda så det printas ut i dom
         weatherCard.appendChild(card);
-    //En mindre  felhantering i konsollen om inte vädret kan hämtas
     }
 

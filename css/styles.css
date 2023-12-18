@@ -67,7 +67,9 @@ header{
     background-color: rgb(222, 222, 222,0.7);
 }
 .random-background-section{
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
 }
 
 .card-icon, .card-temp,.card-title, .card-description {
@@ -75,10 +77,12 @@ header{
 }
 
 .weather-cards{
-    background-color: rgba(43, 176, 2, 0.5);
     display: flex;
     text-align: center;
     flex-wrap: wrap;
+    margin: 0.5em;
+    border: 1px black solid;
+
 }
 
 .card-title{
