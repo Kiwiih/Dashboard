@@ -14,17 +14,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Indie+Flower&family=Josefin+Sans:ital,wght@0,300;1,100&family=Young+Serif&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Main sektionen -->
+    <main class="main-section"> 
     <!-- Header sektion där klockan kommer printas ut -->
     <header id="date-div"></header>
-    <!-- Main sektionen där själva dashboard innehållet skall finnnas -->
-    <main class="main-section">
-        <h1 id="title" contenteditable="true"></h1>
+    <h1 id="title" contenteditable="true" spellcheck="false"></h1>
+    <div class="card-section">
+        <div class="card "></div>
+        <div class="card">
+        <div id="weather-card">
+            <h3 id="weather-title"></h3>
+        </div>
+        </div>
         <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"><input type="text" id="notes-input"></div>
-        
-    </main>
+        <div class="card">
+            <h3 id="notes-headline">Notes</h3>
+            <textarea id="notes-input" spellcheck="false"></textarea> 
+        </div>
+    </div>    
 
     <!-- Knapp och sektion för att slumpa en ny backgrundsbild -->
     <div class="random-background-section">
@@ -33,8 +40,10 @@
      Random background
     </button>
     </div>
+</main>
     <!-- Script taggar för att länka js fil samt kits för symboler -->
     <script src="./js/script.js"></script>
+    <script src="./js/weatherapi.js"></script>
     <script src="https://kit.fontawesome.com/f80359c2af.js" crossorigin="anonymous"></script>
 </body>
 </html>

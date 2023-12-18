@@ -34,15 +34,12 @@ function updateNotesInput(){
 }
 function notesContent(){
     let notesResult = localStorage.getItem(notesKey);
-    notesInput.value = notesResult || 'Skriv anteckningar här...';
+    notesInput.value = notesResult || 'Write notes here...';
 };
 notesInput.addEventListener('input', updateNotesInput)
 
 /*Funktion för att kalla på anteckningarna och titel funktionerna direkt när sidan laddas*/
-window.onload = () => {
-    inputContent(); 
-    notesContent();
-    }
+window.onload = () => { inputContent(); notesContent(); }
 
 //https://fontawesome.com/search?q=weather&o=r länk till icons för väder
 
