@@ -14,41 +14,48 @@ long och lat i variabler som sedan skickas in i API url,
 och sedan anropas getweather funktionen som tar in long
 och lat så vädret visas för rätt plats*/
 
-//Funktion för att spara geolocations long och lat
+//Funktion för att spara geolocations long och lat om geolocation kan hittas
 function ifLocated(position){
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     //Här får apiUrl sitt egentliga värde
     apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-    getWeather(latitude, longitude);
+    displayWeather(latitude, longitude);
 }
-
+//Felmeddelnande om geolocation inte hittas
 function notLocated(response){
     console.log("Http-error: " + response.status);
 }
 //Funktion för att hämta och printa ut api
-async function getWeather(latitude, longitude){
+async function displayWeather(latitude, longitude){
     const response = await fetch(apiUrl);
     if (response.ok){
         const json = await response.json();
         const weather = json;
 
-        const card = document.createElement('div');
+    }else {
+        console.log("Http-error: " + response.status);
+    }        
+}
+
+function displayWeather(weatherInfo, daytitle){
+    const card = document.createElement('div');
         card.className = 'weather-cards'
 
         //Kod för att hämta en icon från openweather baserat på vilket icon id som API:et har
         const weatherIcon = document.createElement('div');
         weatherIcon.className = 'card-icon';
-        const iconTarget = weather.weather[0].icon;
-        const iconUrl = `https://openweathermap.org/img/wn/${iconTarget}.png`;
+        const whichIcon = weather.weather[0].icon;
+        const iconUrl = `https://openweathermap.org/img/wn/${whichIcon}.png`;
         const iconImg = document.createElement('img');
         iconImg.src = iconUrl;
         weatherIcon.appendChild(iconImg);
         card.appendChild(weatherIcon);
-        //Kod för att hämta stadsnamn/titel
+
+        //Kod för att hämta vilken dag som visas
         const title = document.createElement('div');
         title.className = 'card-title';
-        title.textContent = weather.name;
+        title.textContent = `${daytitle}`;
         card.appendChild(title);
 
         
@@ -66,7 +73,5 @@ async function getWeather(latitude, longitude){
         //appenda så det printas ut i dom
         weatherCard.appendChild(card);
     //En mindre  felhantering i konsollen om inte vädret kan hämtas
-    }else {
-        console.log("Http-error: " + response.status);
     }
-}
+

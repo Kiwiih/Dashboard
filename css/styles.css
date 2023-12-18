@@ -17,6 +17,14 @@ font-family: 'Josefin Sans', sans-serif;
     justify-content: center;
     padding: 0.5em;
 }
+body{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    background-image: url('https://moewalls.com/wp-content/uploads/2022/11/may-riding-bicycle-pokemon-emerald-pixel-thumb.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
 h1{
     font-size: 2.5rem;
 }
@@ -42,16 +50,12 @@ header{
     margin: 1em;
     border-radius: 5%;
 }
- body{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: auto;
-    background-image: url('https://moewalls.com/wp-content/uploads/2022/11/may-riding-bicycle-pokemon-emerald-pixel-thumb.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-} 
+
+.add-link-btn{
+   border: 0;
+   background-color: rgb(86, 194, 86);
+   padding: 0.2em;
+}
 
 #random-background-btn{  
     padding: 0.8em;

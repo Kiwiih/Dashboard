@@ -1,3 +1,27 @@
+/*
+3. Denna del innehåller länkar som användaren sparat. 
+Användaren kan ta bort länkar (3a) samt lägga till nya (3b). 
+När användaren lägger till nya länkar ska användaren fylla i länken samt en rubrik som denna 
+vill ska synas i dashboarden.
+Extra utmaning: Hämta länkens favicon och visa som bild i dashboarden.
+    
+4. Här ska vädret i närtid visas. Denna behöver inte se ut exakt som i 
+skissen men det ska vara data som hämtas från något öppet API. 
+För att avgöra vilken stad vädret ska visas för ska browserns geolocation-api användas.
+
+    
+5. Denna del får du fritt bestämma vad den ska innehålla. 
+Det ska dock vara data från ett externt API och exempelvis kan det vara senaste nyheterna 
+eller aktiekurser.
+
+6. I den här delen ska användaren kunna skriva snabba anteckningar. 
+Tänk en stor textarea bara där det som skrivs sparas hela tiden. Det ska inte finnas 
+flera olika anteckningar utan bara just en yta.
+
+7. När användaren klickar på denna knapp ska en randomiserad bild från Unsplash API 
+hämtas och läggas in som bakgrund på dashboarden.*/
+
+
 
 let dateDiv = document.getElementById("date-div");
 //Funktion för att uppdatera tiden utan att uppdatera sidan
