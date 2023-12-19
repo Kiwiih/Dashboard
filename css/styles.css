@@ -51,7 +51,7 @@ header{
     border-radius: 5%;
 }
 
-.add-link-btn{
+.add-link-btn, #get-joke-btn{
    border: 0;
    background-color: rgb(86, 194, 86);
    padding: 0.2em;
@@ -63,7 +63,7 @@ header{
     border: 0;
     font-size: 1rem;
 }
-#random-background-btn:hover{
+#random-background-btn:hover, .add-link-btn:hover, #get-joke-btn:hover{
     background-color: rgb(222, 222, 222,0.7);
 }
 .random-background-section{
@@ -73,7 +73,7 @@ header{
 }
 
 .card-icon, .card-temp,.card-title, .card-description {
-    border: 1px black solid;
+    margin: auto;
 }
 
 .weather-cards{
@@ -81,7 +81,8 @@ header{
     text-align: center;
     flex-wrap: wrap;
     margin: 0.5em;
-    border: 1px black solid;
+   background-color: rgba(221, 241, 218, 0.8);
+   border-radius: 5%;
 
 }
 

@@ -27,7 +27,6 @@ function notLocated(response){
     console.log("Http-error: " + response.status + ":)");
 }
 
-
 //Funktion för att hämta och printa ut api
 async function getWeather(latitude, longitude){
     const response = await fetch(apiUrl);
@@ -60,7 +59,6 @@ async function getWeather(latitude, longitude){
         console.log("Http-error: " + response.status);
     }        
 }
-
 //Funktion för att printa ut vädret med olika egenskaper
 function displayWeather(weather, daytitle){
     const card = document.createElement('div');
