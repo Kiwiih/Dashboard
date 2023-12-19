@@ -12,12 +12,7 @@ För att avgöra vilken stad vädret ska visas för ska browserns geolocation-ap
 
 5. Denna del får du fritt bestämma vad den ska innehålla. 
 Det ska dock vara data från ett externt API och exempelvis kan det vara senaste nyheterna 
-eller aktiekurser.
-
-
-7. När användaren klickar på denna knapp ska en randomiserad bild från Unsplash API 
-hämtas och läggas in som bakgrund på dashboarden.*/
-
+eller aktiekurser.*/
 
 
 let dateDiv = document.getElementById("date-div");

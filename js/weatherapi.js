@@ -4,7 +4,6 @@ navigator.geolocation.getCurrentPosition(ifLocated, notLocated);
 const apiKey = 'b8c6ecccb9c0ad4e7147010fc81ff77a';
 //Variabler för att lagra vart allt ska printas ut
 const weatherCard = document.getElementById('weather-card');
-const weatherTitle = document.getElementById('weather-title');
 
 //Deklarerar apiUrl här för det blev felkoder om att den inte är deklarerad annars
 let apiUrl;
