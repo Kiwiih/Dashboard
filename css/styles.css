@@ -76,24 +76,27 @@ header{
 .card-icon, .card-temp,.card-title, .card-description {
     margin: auto;
 }
+.card-temp{
+    font-weight: bold;
+}
 
 .weather-cards{
     display: flex;
     text-align: center;
     flex-wrap: wrap;
-    margin: 0.5em;
-   background-color: rgba(221, 241, 218, 0.8);
-   border-radius: 5%;
-
+    margin: 0.3em;
+    background-color: rgba(221, 241, 218, 0.8);
+    border-radius: 5%;
 }
 
 .card-title{
     font-weight: bold;
+    width: 60%;
     align-items: center;
 }
 #joke-section{
     width: 90%;
-    height: 80%;
+    height: 73%;
     background-color: rgba(221, 241, 218, 0.8);
     margin: auto;
     text-align: center;
