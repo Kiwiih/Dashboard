@@ -35,7 +35,7 @@ async function getWeather(latitude, longitude){
         const json = await response.json();
         // const weather = json;
         displayWeather(json.list[0], "Idag");
-        console.log(json); 
+        //console.log(json); 
 
         //funktion för att få nytt datum(imorrn) och hämta info från api för att kunna printa
         const tomorrowInfo = json.list.find(entry => {
