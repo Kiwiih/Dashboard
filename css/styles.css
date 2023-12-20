@@ -119,6 +119,7 @@ header{
     text-align: center;
     padding: 0.4em;
     border: dotted white 0.3em; 
+    border-radius: 5%;
 }
 .joke-setup{
     padding-bottom: 0.2em;
@@ -140,6 +141,8 @@ header{
     height: 80%;
     border: 0;
     border-radius: 5%;
+    background-color: rgba(221, 241, 218, 0.8);
+    border: dotted white 0.3em; 
 }
 .notes-headline{
     margin: 0.2em;

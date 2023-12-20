@@ -1,11 +1,3 @@
-/*
-3. Denna del innehåller länkar som användaren sparat. 
-Användaren kan ta bort länkar (3a) samt lägga till nya (3b). 
-När användaren lägger till nya länkar ska användaren fylla i länken samt en rubrik som denna 
-vill ska synas i dashboarden.
-Extra utmaning: Hämta länkens favicon och visa som bild i dashboarden.
-*/
-
 let dateDiv = document.getElementById("date-div");
 //Funktion för att uppdatera tiden utan att uppdatera sidan
 function updateTime(){
@@ -54,6 +46,7 @@ let userLinks = getStoredLinks() || [];
 
 addLinkBtn.addEventListener('click', addLinks)
 
+//Funktion för att kunna lägga till länkar
 function addLinks(){
 
     let inputValue = prompt('Please enter your link:') 
@@ -64,13 +57,15 @@ function addLinks(){
     linkContainer.innerHTML = ''; 
     displayLinks();  
 }
+//funktion för att rendra länkarna
 function displayLinks(){
 
     userLinks.forEach((link, index) => {
         const linkSection = document.createElement('div');
         linkSection.className = 'link-section';
-
+        
         let url = new URL(link)
+        //Ska se till så inte hela urlen behövs skrivas ut, utan bara vad sidan heter
         let siteName = url.hostname;
 
         const linkElement = document.createElement('a');
@@ -78,6 +73,7 @@ function displayLinks(){
         linkElement.className = 'link-element';   
         linkElement.textContent = siteName;
 
+        //Skapa en delete knapp för varje länk som läggs till, och en funktion som tar bort
         const removeButton = document.createElement('button');
         removeButton.textContent = 'X';
         removeButton.className = 'remove-btn';  
@@ -93,13 +89,16 @@ function displayLinks(){
         linkContainer.appendChild(linkSection);
     });
 }
-
+//Funktion för att spara länkarna i localstorage
 function saveLinks(){
     localStorage.setItem('userLinks', JSON.stringify(userLinks));
     
 }
+//Funktion för att hämta de sparade länkarna
 function getStoredLinks(){
     const storedLinks = localStorage.getItem('userLinks');
+    /*lärde mig att ? kan tydligen funka som en "shorthand" för en if sats, så om den(?) är falsk(finns inget i 
+    localstorage på den nyckeln) så skickas det en tom array 😀 */
     return storedLinks ? JSON.parse(storedLinks) : [];
 }
 
