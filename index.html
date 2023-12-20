@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A basic dahsboard for the everyday user, displays all the necesseties and i customizable">
+    <meta name="description" content="A basic dahsboard for the everyday user, displays all the necesseties and is customizable">
     <title>Dashboard</title>
     <link rel="stylesheet" href="./css/styles.css">
     
@@ -18,33 +18,40 @@
     <main class="main-section"> 
     <!-- Header sektion där klockan kommer printas ut -->
     <header id="date-div"></header>
-    <h1 id="title" contenteditable="true" spellcheck="false"></h1>
+    <!-- Sidans titel som är redigeringsbar -->
+    <h1 id="title" contenteditable="true" spellcheck="false">Dashboard</h1>
+    
     <div class="card-section">
 
+        <!-- Länk container -->
         <div class="card">
-        <h3 id="notes-headline">Links</h3>
-        <div class="btn-section">
-        <button class="add-link-btn"><i class="fa-solid fa fa-plus" style="color: #ffffff;"></i> Add Link</button>
+            <h3 class="notes-headline" >Links</h3>
+            <div id="link-container">
+            </div>
+            <div class="btn-section">
+                <button class="add-link-btn"><i class="fa-solid fa fa-plus" style="color: #ffffff;"></i> Add Link</button>
+            </div>    
         </div>
-    </div>
+        <!-- Väder container -->
         <div class="card">
-            <h3 id="notes-headline">Weather</h3>
+            <h3 class="notes-headline">Weather</h3>
         <div id="weather-card">
-            <h3 id="weather-title"></h3>
         </div>
         </div>
+        <!-- skämt container -->
         <div class="card">
-            <h3 id="notes-headline">Jokes</h3>
+            <h3 class="notes-headline">Jokes</h3>
             <div id="joke-section"></div>
             <div class="btn-section">
             <button id="get-joke-btn"><i class="fa-solid fa fa-ghost" style="color: #ffffff;"></i> Nytt skämt tack!</button>
             </div>
         </div>
-        
+        <!-- antecknings container -->
         <div class="card">
-            <h3 id="notes-headline">Notes</h3>
+            <h3 class="notes-headline">Notes</h3>
             <textarea id="notes-input" spellcheck="false"></textarea> 
         </div>
+
     </div>    
 
     <!-- Knapp och sektion för att slumpa en ny backgrundsbild -->

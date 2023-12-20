@@ -33,8 +33,6 @@ function inputContent() {
 //Eventlistener för att funktionen ska kallas på när inputen är ändrad
 titleInput.addEventListener('input', updateTitleInput)
 
-
-
 //funktioner för notes inputen, så den uppdaterar och sparar i localStorage
 let notesInput = document.getElementById("notes-input");
 let notesKey = 'notesHTML';
@@ -48,9 +46,67 @@ function notesContent(){
 };
 notesInput.addEventListener('input', updateNotesInput)
 
-/*Funktion för att kalla på anteckningarna och titel funktionerna direkt när sidan laddas*/
-window.onload = () => { inputContent(); notesContent(); }
 
+//Skapa och spara länkar
+const addLinkBtn = document.querySelector('.add-link-btn');
+const linkContainer = document.getElementById('link-container');
+let userLinks = getStoredLinks() || [];
 
-//API för 3e rutan https://sv443.net/jokeapi/v2/      https://www.youtube.com/watch?v=xHuaEKCldhE&list=PLNCevxogE3fiLT6bEObGeVfHVLnttptKv
+addLinkBtn.addEventListener('click', addLinks)
 
+function addLinks(){
+
+    let inputValue = prompt('Please enter your link:') 
+    userLinks.push(inputValue) 
+    console.log(userLinks)
+    saveLinks();
+    getStoredLinks();
+    linkContainer.innerHTML = ''; 
+    displayLinks();  
+}
+function displayLinks(){
+
+    userLinks.forEach((link, index) => {
+        const linkSection = document.createElement('div');
+        linkSection.className = 'link-section';
+
+        let url = new URL(link)
+        let siteName = url.hostname;
+
+        const linkElement = document.createElement('a');
+        linkElement.href = link;
+        linkElement.className = 'link-element';   
+        linkElement.textContent = siteName;
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'X';
+        removeButton.className = 'remove-btn';  
+        removeButton.addEventListener('click', function(){
+            userLinks.splice(index, 1);
+            saveLinks();
+            linkContainer.innerHTML = '';
+            displayLinks();
+        });
+        
+        linkSection.appendChild(linkElement);
+        linkSection.appendChild(removeButton);
+        linkContainer.appendChild(linkSection);
+    });
+}
+
+function saveLinks(){
+    localStorage.setItem('userLinks', JSON.stringify(userLinks));
+    
+}
+function getStoredLinks(){
+    const storedLinks = localStorage.getItem('userLinks');
+    return storedLinks ? JSON.parse(storedLinks) : [];
+}
+
+/*Funktion för att kalla på anteckningarna och titel funktionerna direkt när sidan laddas, även lagt till så ett skämt genereras*/
+window.onload = () => { 
+    inputContent(); 
+    notesContent(); 
+    getJoke(); 
+    displayLinks();
+};

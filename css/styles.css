@@ -57,7 +57,25 @@ header{
    padding: 0.2em;
    box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(92, 92, 92, 0.7);
 }
-
+.link-section{
+    background-color: rgba(221, 241, 218, 0.8);
+    padding: 0.5em;
+    margin: 0.4em;
+}
+#link-container{
+   width: 100%;
+    height: 80%; 
+}
+.link-element:hover{
+    color: white;
+}
+.remove-btn{
+    float: right;
+    border: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+    background-color: rgba(0, 0, 0, 0.0);
+}
 #random-background-btn{  
     padding: 0.8em;
     font-weight: bold;
@@ -72,14 +90,14 @@ header{
     justify-content: space-around;
     margin-top: 1em;
 }
-
 .card-icon, .card-temp,.card-title, .card-description {
     margin: auto;
 }
-.card-temp{
+.card-temp, .link-element{
     font-weight: bold;
+    color: black;
+    text-decoration: none;
 }
-
 .weather-cards{
     display: flex;
     text-align: center;
@@ -88,7 +106,6 @@ header{
     background-color: rgba(221, 241, 218, 0.8);
     border-radius: 5%;
 }
-
 .card-title{
     font-weight: bold;
     width: 60%;
@@ -101,8 +118,7 @@ header{
     margin: auto;
     text-align: center;
     padding: 0.4em;
-    border: dotted white 0.3em;
-    
+    border: dotted white 0.3em; 
 }
 .joke-setup{
     padding-bottom: 0.2em;
@@ -117,7 +133,6 @@ header{
     justify-content: center;
     margin-top: 0.5em;
 }
-
 #notes-input{
     max-width: 95%;
     max-height: 80%;
@@ -126,7 +141,7 @@ header{
     border: 0;
     border-radius: 5%;
 }
-#notes-headline{
+.notes-headline{
     margin: 0.2em;
     text-align: center;
 }

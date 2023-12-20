@@ -52,5 +52,3 @@ async function getJoke(){
         console.log('Error: ' + response.status);
     }
 }
-
-

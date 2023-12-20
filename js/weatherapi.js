@@ -31,7 +31,6 @@ async function getWeather(latitude, longitude){
     const response = await fetch(apiUrl);
     if (response.ok){
         const json = await response.json();
-        // const weather = json;
         displayWeather(json.list[0], "Idag");
         //console.log(json); 
 
@@ -45,6 +44,7 @@ async function getWeather(latitude, longitude){
         })
         displayWeather(tomorrowInfo, 'Imorgon');
 
+        //I övermorgons väder
         const nextTomorrowInfo = json.list.find(entry => {
             const entryDate = new Date(entry.dt_txt);
             const nextTomorrow = new Date();
